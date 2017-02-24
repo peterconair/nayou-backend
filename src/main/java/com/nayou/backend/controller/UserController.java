@@ -1,4 +1,4 @@
-package com.nayou.controller;
+package com.nayou.backend.controller;
 
 import java.util.Date;
 import java.util.Map;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nayou.model.User;
-import com.nayou.service.UserService;
+import com.nayou.backend.model.User;
+import com.nayou.backend.service.UserService;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

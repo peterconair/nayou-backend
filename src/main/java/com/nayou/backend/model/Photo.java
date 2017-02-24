@@ -1,13 +1,15 @@
-package com.nayou.model;
+package com.nayou.backend.model;
 
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -15,6 +17,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Photo {
@@ -36,9 +39,9 @@ public class Photo {
     @JsonBackReference
     private User user;
 
-//    @ManyToMany(mappedBy = "likedPhotoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JsonIgnore
-//    private List<User> likedUserList;
+  //  @ManyToMany(mappedBy = "likedPhotoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  //  @JsonIgnore
+ //   private List<User> likedUserList;
 
     private int likes;
 
@@ -76,14 +79,14 @@ public class Photo {
     public void setCreated(Date created) {
         this.created = created;
     }
-//
-//    public Date getUpdated() {
-//        return updated;
-//    }
-//
-//    public void setUpdated(Date updated) {
-//        this.updated = updated;
-//    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 
     public int getLikes() {
         return likes;

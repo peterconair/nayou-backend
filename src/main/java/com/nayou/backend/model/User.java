@@ -1,9 +1,11 @@
-package com.nayou.model;
+package com.nayou.backend.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,23 +13,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.OrderBy;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.nayou.backend.model.user.Role;
 
 @Entity
 public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
+	
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	
+	@NotNull
+	@Column(unique=true)
 	private String userName;
+	@NotNull
 	private String password;
+	@NotNull
 	private String gender;
 
 	@CreationTimestamp
@@ -42,6 +54,9 @@ public class User {
 
 	@ManyToMany
 	private List<Photo> likedPhotoList;
+	
+	@ManyToMany
+	private List<Role> roleList;
 
 	public Long getUserId() {
 		return userId;
@@ -121,5 +136,13 @@ public class User {
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+
+	public List<Role> getRoleList() {
+		return roleList;
+	}
+
+	public void setRoleList(List<Role> roleList) {
+		this.roleList = roleList;
 	}
 }

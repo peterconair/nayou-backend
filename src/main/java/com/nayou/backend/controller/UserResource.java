@@ -1,4 +1,4 @@
-package com.nayou.controller;
+package com.nayou.backend.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nayou.model.User;
-import com.nayou.service.UserService;
+import com.nayou.backend.model.User;
+import com.nayou.backend.service.UserService;
 
 @RestController
 @RequestMapping("/rest")
@@ -22,7 +22,6 @@ public class UserResource {
     public List<User> findAllUsers() {
         return userService.findAllUsers();
     }
-
 
     @RequestMapping(value = "/user/userName", method = RequestMethod.POST)
     public User findByUserName(@RequestBody String userName) {

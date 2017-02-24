@@ -1,4 +1,4 @@
-package com.nayou.model;
+package com.nayou.backend.model;
 
 import java.util.Date;
 
@@ -23,6 +23,7 @@ public class Comment {
 	@ManyToOne
 	@JsonIgnore
 	private Photo photo;
+	
 	private Long photoId;
 	private String userName;
 
@@ -72,19 +73,19 @@ public class Comment {
 		this.photoId = photoId;
 	}
 
-	// public Date getCreated() {
-	// return created;
-	// }
-	//
-	// public void setCreated(Date created) {
-	// this.created = created;
-	// }
-	//
-	// public Date getUpdated() {
-	// return updated;
-	// }
-	//
-	// public void setUpdated(Date updated) {
-	// this.updated = updated;
-	// }
+	 public Date getCreated() {
+	 return created;
+	 }
+	
+	 public void setCreated(Date created) {
+	 this.created = created;
+	 }
+	
+	 public Date getUpdated() {
+	 return updated;
+	 }
+	
+	 public void setUpdated(Date updated) {
+	 this.updated = updated;
+	 }
 }

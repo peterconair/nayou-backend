@@ -1,8 +1,8 @@
-package com.nayou.service;
+package com.nayou.backend.service;
 
 import java.util.List;
 
-import com.nayou.model.User;
+import com.nayou.backend.model.User;
 
 public interface UserService {
 

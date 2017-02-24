@@ -1,13 +1,13 @@
-package com.nayou.service.impl;
+package com.nayou.backend.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nayou.dao.UserDao;
-import com.nayou.model.User;
-import com.nayou.service.UserService;
+import com.nayou.backend.dao.UserDao;
+import com.nayou.backend.model.User;
+import com.nayou.backend.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

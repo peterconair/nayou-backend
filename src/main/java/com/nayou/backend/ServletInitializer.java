@@ -1,4 +1,4 @@
-package com.nayou;
+package com.nayou.backend;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;

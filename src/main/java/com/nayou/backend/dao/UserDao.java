@@ -1,11 +1,12 @@
-package com.nayou.dao;
+package com.nayou.backend.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.data.repository.CrudRepository;
 
-import com.nayou.model.User;
+import com.nayou.backend.model.User;
+
+import org.springframework.data.repository.CrudRepository;
 
 @Repository
 public interface UserDao extends CrudRepository<User, Long> {

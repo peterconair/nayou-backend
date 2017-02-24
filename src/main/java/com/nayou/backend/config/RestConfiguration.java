@@ -1,4 +1,4 @@
-package com.nayou.config;
+package com.nayou.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
